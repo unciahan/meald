@@ -10,6 +10,7 @@ public class HelloController {
 
     @GetMapping("/hello")   // GET method 수신 API
     public String hello() {
+
         return "hello";
     }
 
