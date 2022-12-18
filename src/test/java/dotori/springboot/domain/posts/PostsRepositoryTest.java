@@ -13,14 +13,22 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/*
+@Runwith : use custom runner, not default junit runner
+@SpringBootTest : use h2 as database
+@Autowired : inject object dependency
+@Test : run test case
+@After : run method after executing @Test
+ */
+
 @RunWith(SpringRunner.class)
-@SpringBootTest   // 사용시 H2 DB 자동 사용
+@SpringBootTest
 public class PostsRepositoryTest {
 
     @Autowired
     PostsRepository postsRepository;
 
-    @After   // 단위 테스트가 끝날 때마다 수행되는 메소드
+    @After
     public void cleanup() {
         postsRepository.deleteAll();
     }

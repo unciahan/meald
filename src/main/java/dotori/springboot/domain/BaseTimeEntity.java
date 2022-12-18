@@ -9,6 +9,15 @@ import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
+/*
+@Getter : [Lombok] generate getter method for all fields
+@MappedSuperclass : [JPA] apply mapping only to its subclasses, since no table exists for superclass
+@EntityListeners : [JPA] specify callback class
+AuditingEntityListener.class : class for auditing feature
+@CreatedDate : declare created date field
+@LastModifiedDate : declare modified date field
+ */
+
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)

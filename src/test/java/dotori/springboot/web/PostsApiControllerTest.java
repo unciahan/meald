@@ -21,9 +21,20 @@ import java.net.ResponseCache;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+
+/*
+@Runwith : use custom runner, not default junit runner
+@SpringBootTest : use h2 as database
+webEnvironment = RANDOM_PORT : listen on random port
+@LocalServerPort : inject allocated port to field
+@Autowired : inject object dependency
+@Test : run test case
+@After : run method after executing @Test
+ */
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = RANDOM_PORT)
 public class PostsApiControllerTest {
 
     @LocalServerPort

@@ -1,6 +1,10 @@
-// gradle script dependencies
+/*
+buildScript : gradle script dependency
+ext : set global variable
+group : unique identifier of this project (GroupId)
+ */
+
 buildscript {
-    // Set global variable
     ext {
         springBootVersion = '2.1.9.RELEASE'
     }
@@ -13,13 +17,12 @@ buildscript {
     }
 }
 
-// java compile dependencies
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'dotori.meald'   // GroupId : Unique identifier of this project
+group 'dotori.meald'
 version '1.0.0'
 sourceCompatibility = 1.8
 

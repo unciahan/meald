@@ -4,6 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+/*
+@EnableJpaAuditing : Enable auditing in JPA
+@SpringBootApplication : main class, springboot will start from here if executed.
+SpringApplication.run : start embedded tomcat
+ */
 @EnableJpaAuditing
 @SpringBootApplication
 public class Application {

@@ -7,13 +7,23 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/*
+@Getter : [Lombok] generate getter method for all fields
+@NoArgsConstructor : [Lombok] generate default constructor
+@Entity : [JPA] link class to database table (PascalCase -> snake_case)
+@Id : [JPA] primary key
+@GeneratedValue : [JPA] primary key generation setting
+strategy = GenerationType.IDENTITY : generate by auto-increment
+@Column : [JPA] column
+@Builder : [Lombok] create builder pattern class
+ */
 @Getter
-@NoArgsConstructor   // 기본 생성자 자동 추가
-@Entity   // 테이블과 링크될 클래스임을 명시 (PascalCase -> snake_case 로 매칭)
+@NoArgsConstructor
+@Entity
 public class Posts  extends BaseTimeEntity {
 
-    @Id   // PK
-    @GeneratedValue(strategy = GenerationType.IDENTITY)   // auto_increment 설정
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(length = 500, nullable = false)
